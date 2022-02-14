@@ -11,13 +11,13 @@ public class Employee implements Parcelable {
     public String age;
     public String salary;
 
-    public Employee(String id, String name, String phoneno, String Spin,String age,String salary) {
+    public Employee(String id, String name, String phoneno, String Spin, String age, String salary) {
         this.id = id;
         this.name = name;
         this.phoneno = phoneno;
         this.Spin = Spin;
-        this.age=age;
-        this.salary=salary;
+        this.age = age;
+        this.salary = salary;
     }
 
     protected Employee(Parcel in) {
@@ -25,8 +25,8 @@ public class Employee implements Parcelable {
         name = in.readString();
         phoneno = in.readString();
         Spin = in.readString();
-        age=in.readString();
-        salary=in.readString();
+        age = in.readString();
+        salary = in.readString();
     }
 
     public static final Creator<Employee> CREATOR = new Creator<Employee>() {

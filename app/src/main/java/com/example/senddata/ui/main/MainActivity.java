@@ -16,18 +16,15 @@ import android.widget.Toast;
 import com.example.senddata.R;
 import com.example.senddata.model.Employee;
 import com.example.senddata.model.EmployeeList;
-import com.example.senddata.ui.home.Home;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.example.senddata.ui.home.HomeActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button sendButton;
-    EditText sendText;
-    EditText sendname;
+    EditText sendId;
+    EditText sendName;
     EditText sendAge;
     EditText sendSalary;
-    EditText sendphno;
+    EditText sendPhno;
     Spinner spinnerID;
     String SpinnerValue;
     TextView sendLevel;
@@ -37,17 +34,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sendButton = findViewById(R.id.buttonProceed);
-        sendText = findViewById(R.id.send_text_id);
-        sendname = findViewById(R.id.send_name_id);
-        sendphno = findViewById(R.id.send_phno_id);
-        sendLevel = findViewById(R.id.level);
-        saveBttn = findViewById(R.id.buttonSave);
-        sendAge =findViewById(R.id.age);
-        sendSalary =findViewById(R.id.salary);
+        sendButton = findViewById(R.id.bt_proceed);
+        sendId = findViewById(R.id.et_send_id);
+        sendName = findViewById(R.id.et_send_name);
+        sendPhno = findViewById(R.id.et_send_phno);
+        sendLevel = findViewById(R.id.tv_send_level);
+        saveBttn = findViewById(R.id.bt_save);
+        sendAge = findViewById(R.id.et_send_age);
+        sendSalary = findViewById(R.id.et_send_salary);
 
         String[] Levels = {"Please Select Levels", "Level 1", "Level 2", "Level 3", "Level 4"};
-        spinnerID = findViewById(R.id.idSpinner);
+        spinnerID = findViewById(R.id.sp_send_level);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, Levels);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerID.setAdapter(adapter);
@@ -60,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
 
@@ -69,15 +65,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (!validate())
                     return;
-                String id = sendText.getText().toString();
-                String name = sendname.getText().toString();
-                String phno = sendphno.getText().toString();
+                String id = sendId.getText().toString();
+                String name = sendName.getText().toString();
+                String phno = sendPhno.getText().toString();
                 String age = sendAge.getText().toString();
                 String salary = sendSalary.getText().toString();
 
-                Employee user = new Employee(id, name, phno, SpinnerValue,age,salary);
+                Employee user = new Employee(id, name, phno, SpinnerValue, age, salary);
 
-                Intent intent = new Intent(getApplicationContext(), Home.class);
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
 //                intent.putExtra("user", user);
                 startActivity(intent);
 
@@ -90,28 +86,27 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (!validate())
                     return;
-                String id = sendText.getText().toString();
-                String name = sendname.getText().toString();
-                String phno = sendphno.getText().toString();
+                String id = sendId.getText().toString();
+                String name = sendName.getText().toString();
+                String phno = sendPhno.getText().toString();
                 String age = sendAge.getText().toString();
-                String salary= sendSalary.getText().toString();
-                Employee user = new Employee(id, name, phno, SpinnerValue,age,salary);
-
+                String salary = sendSalary.getText().toString();
+                Employee user = new Employee(id, name, phno, SpinnerValue, age, salary);
                 EmployeeList.addEmployees(user);
             }
         });
     }
 
     private Boolean validate() {
-        if (sendText.getText().toString().isEmpty()) {
+        if (sendId.getText().toString().isEmpty()) {
             Toast.makeText(MainActivity.this, "Please Fill ID", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (sendphno.getText().toString().isEmpty() || sendphno.getText().length() < 10) {
+        if (sendPhno.getText().toString().isEmpty() || sendPhno.getText().length() < 10) {
             Toast.makeText(MainActivity.this, "Please Fill Phone number", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (sendname.getText().toString().isEmpty()) {
+        if (sendName.getText().toString().isEmpty()) {
             Toast.makeText(MainActivity.this, "Please Fill Name", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -125,6 +120,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
-
 }

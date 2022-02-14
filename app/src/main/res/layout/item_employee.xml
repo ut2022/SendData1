@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    android:id="@+id/container"
+    android:id="@+id/cv_item"
    >
 
     <RelativeLayout
@@ -13,27 +13,27 @@
         >
 
         <TextView
-            android:id="@+id/Recycle1"
+            android:id="@+id/tv_item_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/Recycle2"
+            android:id="@+id/tv_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Recycle1" />
+            android:layout_below="@+id/tv_item_id" />
 
         <TextView
-            android:id="@+id/Recycle3"
+            android:id="@+id/tv_item_phno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Recycle2" />
+            android:layout_below="@+id/tv_item_name" />
 
         <TextView
-            android:id="@+id/Recycle4"
+            android:id="@+id/tv_item_level"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Recycle3" />
+            android:layout_below="@+id/tv_item_phno" />
 
     </RelativeLayout>
 

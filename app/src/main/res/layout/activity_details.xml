@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Details">
+    tools:context=".ui.details.DetailsActivity">
 
     <RelativeLayout
-        android:id="@+id/formRl0"
+        android:id="@+id/form_Rl0"
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
@@ -22,10 +22,10 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/formRl1"
+        android:id="@+id/form_Rl1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/formRl0"
+        android:layout_below="@+id/form_Rl0"
         android:visibility="visible">
 
         <androidx.cardview.widget.CardView
@@ -39,7 +39,7 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:id="@+id/formLL0"
+                    android:id="@+id/form_LL0"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_centerInParent="true"
@@ -85,7 +85,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
-
                                 <TextView
                                     android:id="@+id/form_id"
                                     android:layout_width="wrap_content"
@@ -94,7 +93,6 @@
                                     android:text=""
                                     android:textColor="#5E5D5D"
                                     android:textSize="12dp" />
-
 
                             </RelativeLayout>
 
@@ -205,9 +203,7 @@
 
                             </RelativeLayout>
 
-
                         </LinearLayout>
-
 
                     </LinearLayout>
 
@@ -249,7 +245,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
-
                                 <TextView
                                     android:id="@+id/form_salary"
                                     android:layout_width="wrap_content"
@@ -260,12 +255,9 @@
                                     android:textColor="#5E5D5D"
                                     android:textSize="12dp" />
 
-
                             </RelativeLayout>
 
-
                         </LinearLayout>
-
 
                     </LinearLayout>
 
@@ -284,7 +276,6 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
-
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -308,7 +299,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
-
                                 <TextView
                                     android:id="@+id/form_age"
                                     android:layout_width="wrap_content"
@@ -319,12 +309,9 @@
                                     android:textColor="#5E5D5D"
                                     android:textSize="12dp" />
 
-
                             </RelativeLayout>
 
-
                         </LinearLayout>
-
 
                     </LinearLayout>
 
@@ -343,7 +330,6 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
-
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -367,7 +353,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
-
                                 <TextView
                                     android:id="@+id/form_level"
                                     android:layout_width="wrap_content"
@@ -376,7 +361,6 @@
                                     android:text=""
                                     android:textColor="#5E5D5D"
                                     android:textSize="12dp" />
-
 
                             </RelativeLayout>
 
@@ -391,6 +375,5 @@
         </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
-
 
 </RelativeLayout>
