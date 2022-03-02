@@ -1,8 +1,11 @@
 package com.example.senddata.ui.details;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.senddata.R;
@@ -45,5 +48,22 @@ public class DetailsActivity extends AppCompatActivity {
         formLevel.setText(user.Spin);
         formSalary.setText(user.salary);
         formAge.setText(user.age);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
     }
+
+        @Override
+        public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case android.R.id.home:
+//                Toast.makeText(this, "Back button pressed!", Toast.LENGTH_SHORT).show();
+//                this.onBackPressed();
+                    finish();  //destroy method called
+                    return true;
+            }
+            return super.onOptionsItemSelected(item);  //immediate base class function call
+        }
+
 }

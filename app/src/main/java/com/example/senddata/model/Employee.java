@@ -3,6 +3,8 @@ package com.example.senddata.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+
 public class Employee implements Parcelable {
     public String id;
     public String name;

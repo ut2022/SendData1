@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.20462962962962963" />
+        <entry key="app/src/main/res/layout/activity_details.xml" value="0.24219634567481885" />
+        <entry key="app/src/main/res/layout/activity_employee_history.xml" value="0.27901018667912136" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.23409271240234378" />
+        <entry key="app/src/main/res/layout/activity_information.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_log_in.xml" value="0.21603240966796877" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.19519927536231885" />
+        <entry key="app/src/main/res/layout/current_details.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_current_employees.xml" value="0.16077898550724637" />
+        <entry key="app/src/main/res/layout/fragment_previous_employees.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_employee.xml" value="0.19519927536231885" />
+        <entry key="app/src/main/res/layout/previous_details.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
