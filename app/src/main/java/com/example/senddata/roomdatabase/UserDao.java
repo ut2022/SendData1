@@ -20,5 +20,5 @@ public interface UserDao {
     void deleteAll();
 
     @Query("SELECT COUNT(userId) FROM table_name")
-    int getCount();
+    LiveData<Integer> getCount();
 }

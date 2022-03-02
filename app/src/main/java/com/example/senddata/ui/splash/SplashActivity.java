@@ -1,8 +1,10 @@
 package com.example.senddata.ui.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.app.Application;
 import android.content.Intent;
@@ -27,18 +29,18 @@ import com.example.senddata.ui.viewmodel.LoginViewModel;
 
 public class SplashActivity extends AppCompatActivity {
 private LoginViewModel loginViewModel;
-     private int user_count;
+     private LiveData<Integer> user_count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        loginViewModel=new ViewModelProvider(this).get(LoginViewModel.class);
+        loginViewModel = new ViewModelProvider(SplashActivity.this, ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication())).get(LoginViewModel.class);
         Runnable runnable=new Runnable() {
             @Override
             public void run() {
                 user_count=loginViewModel.getCount();
-                if(user_count > 0)
+                if(user_count.getValue() > 0)
                 {
                     Log.d("main", "successful "+user_count);
                 }

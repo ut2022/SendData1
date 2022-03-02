@@ -1,45 +1,26 @@
 package com.example.senddata.ui.viewmodel;
 
-import static android.content.ContentValues.TAG;
-
 import android.app.Application;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.ColorSpace;
-import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
-import android.util.Patterns;
-import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import com.example.senddata.model.ApiResults;
-import com.example.senddata.model.Info;
-import com.example.senddata.roomdatabase.UserDatabase;
 import com.example.senddata.roomdatabase.UserEntity;
 import com.example.senddata.roomdatabase.UserRepository;
-import com.example.senddata.ui.information.InformationActivity;
 import com.example.senddata.ui.login.LogInActivity;
-import com.example.senddata.ui.retrofit.Api;
 import com.example.senddata.ui.retrofit.RetrofitClient;
-
-import org.json.JSONObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginViewModel extends AndroidViewModel implements Observable {
-    private UserRepository userRepository;
+    public UserRepository userRepository;
     public LiveData<UserEntity> getAllPosts;
 
     private MutableLiveData<LogInActivity.Validationtype> validationLivedata=new MutableLiveData<>() ;
@@ -174,7 +155,7 @@ public class LoginViewModel extends AndroidViewModel implements Observable {
             }
         });
     }
-    public int getCount(){
+    public LiveData<Integer> getCount(){
         return userRepository.getCount();
     }
 }

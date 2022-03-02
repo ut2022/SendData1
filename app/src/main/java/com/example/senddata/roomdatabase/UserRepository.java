@@ -11,11 +11,12 @@ public class UserRepository {
 
     public UserDao userDao;
     public LiveData<UserEntity> getAllPosts;
+    public LiveData<Integer> getCount;
 
     public UserRepository(Application application){
-        UserDatabase userDatabase= UserDatabase.getInstance(application);
-        userDao= userDatabase.userDao();
+        userDao= UserDatabase.userDao();
         getAllPosts=userDao.getAll();
+        getCount = userDao.getCount();
     }
     public LiveData<UserEntity> getAllPosts(){
         return getAllPosts;
@@ -38,7 +39,7 @@ public class UserRepository {
             return null;
         }
     }
-    public int getCount() {
-        int count = UserDao.getCount();
+    public LiveData<Integer> getCount() {
+        return getCount;
     }
 }
